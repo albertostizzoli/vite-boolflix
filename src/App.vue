@@ -1,6 +1,12 @@
 <template>
-  <SearchBar @search="playMovies(), playSeries()"/>
-  <MainComponent/>
+  <div class="container">
+    <header>
+      <SearchBar @search="playMoviesandSeries" />
+    </header>
+    <main>
+      <MainComponent />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -20,22 +26,19 @@ export default {
     }
   },
   methods: {
-    playMovies() {
-      const url = store.apiUrl + store.endPoint.movies
+    playMoviesandSeries() {
+      const movieUrl = store.apiUrl + store.endPoint.movie
       axios.get(url, { params: store.params }).then((res) => {
         console.log(res.data.results);
         store.movieList = res.data.results
       })
-      store.params.query = '';
-    },
-    playSeries() {
-      const url = store.apiUrl + store.endPoint.series
+      const seriesUrl = store.apiUrl + store.endPoint.series
       axios.get(url, { params: store.params }).then((res) => {
         console.log(res.data.results);
         store.seriesList = res.data.results
       })
       store.params.query = '';
-    }
+    },
   },
   created() {
   },

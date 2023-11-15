@@ -1,7 +1,7 @@
 <template>
-    <div class="input-group">
+    <div class="input-group flex-nowrap ">
         <input class="form-control" type="text" v-model="store.params.query" @keyup.enter="$emit('search', text)">
-        <button class="btn btn-primary" @click="$emit('search', text)">Cerca</button>
+        <button class="btn btn-primary " @click="$emit('search', text)">Cerca</button>
     </div>
 </template>
 
