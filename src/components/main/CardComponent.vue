@@ -1,6 +1,6 @@
 <template>
    <div class="card col-3">
-    <img :src="store.imageUrl + url_image" class="card-img-top" :alt="title" v-if="url_image">
+    <img :src="store.imageUrl + image" class="card-img-top" :alt="title" v-if="image">
     <img src="/img/logo.jpeg" alt="default" v-else>
     <div class="card-body">
         <h4 class="card-title">{{ title }}</h4>
