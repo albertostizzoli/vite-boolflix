@@ -36,7 +36,7 @@ import {store} from '../../data/store.js';
     export default {
         name: 'CardComponent',
         props: {
-            url_image:{
+            image:{
                 type: String,
                 required: false,
             },
