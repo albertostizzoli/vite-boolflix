@@ -1,7 +1,7 @@
 <template>
    <div class="card col-3">
     <img :src="store.imageUrl + image" class="card-img-top" :alt="title" v-if="image">
-    <img src="/img/logo.jpeg" alt="default" v-else>
+    <img src="/img/logo.jpeg" alt="Logo" v-else>
     <div class="card-body">
         <h4 class="card-title">{{ title }}</h4>
         <h6 class="card-title">{{ original_title }}</h6>
@@ -36,22 +36,22 @@ import {store} from '../../data/store.js';
     export default {
         name: 'CardComponent',
         props: {
-            image:{
+            original_title:{
+                type: String,
+                required: true,
+            },
+
+             image: {
                 type: String,
                 required: false,
             },
-
             title: {
                 type: String,
                 required: true,
             },
             votes: {
-                type: String,
+                type: Number,
                 required: false,
-            },
-            original_title: {
-                type: String,
-                required: true,
             },
             language: {
                 type: String,

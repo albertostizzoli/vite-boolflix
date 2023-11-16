@@ -22,18 +22,17 @@ export default {
   },
   data() {
     return {
-      store
     }
   },
   methods: {
     playMoviesandSeries() {
       const movieUrl = store.apiUrl + store.endPoint.movie
-      axios.get(url, { params: store.params }).then((res) => {
+      axios.get(movieUrl, { params: store.params }).then((res) => {
         console.log(res.data.results);
         store.movieList = res.data.results
       })
       const seriesUrl = store.apiUrl + store.endPoint.series
-      axios.get(url, { params: store.params }).then((res) => {
+      axios.get(seriesUrl, { params: store.params }).then((res) => {
         console.log(res.data.results);
         store.seriesList = res.data.results
       })

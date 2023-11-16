@@ -8,13 +8,13 @@
 <script>
 import { store } from '../data/store.js'
 export default {
-    name: 'SearchPage',
+    name: 'SearchBar',
     data(){
         return{
             store,
             text: '',
         }
-    }
+    },
 }
 </script>
 

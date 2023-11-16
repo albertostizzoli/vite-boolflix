@@ -8,7 +8,7 @@ export const store = reactive({
         series: "search/tv"
     },
     params :{
-        api: '57c1fd25fdb62d9a100ae60009b3bf0b',
+        api_key: '57c1fd25fdb62d9a100ae60009b3bf0b',
         query: '',
     },
     movieList: [],
