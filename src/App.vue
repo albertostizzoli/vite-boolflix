@@ -1,27 +1,38 @@
 <template>
-  <div class="container">
-    <header>
-      <SearchBar @search="playMoviesandSeries" />
-    </header>
-    <main>
-      <MainSection />
-    </main>
+  <div v-show="startLogin">
+    <LoginSection @newProfile="newProfile" @showApp="showApp = true, startLogin = false" />
+  </div>
+  <div v-show="showApp">
+    <body>
+      <header class="p-4 position-fixed w-100 z-3" id="header">
+        <HeaderSection @search="playMoviesandSeries"/>
+      </header>
+      <main id="main">
+        <div class="container">
+          <MainSection />
+        </div>
+      </main>
+    </body>
   </div>
 </template>
 
 <script>
+import HeaderSection from './components/HeaderSection.vue';
+import LoginSection from './components/LoginSection.vue';
 import MainSection from './components/MainSection.vue';
-import SearchBar from './components/SearchBar.vue';
 import axios from 'axios'
 import { store } from './data/store.js';
 export default {
   name: 'App',
   components: {
-    SearchBar,
     MainSection,
+    LoginSection,
+    HeaderSection,
   },
   data() {
     return {
+      showApp: false,
+      startLogin: true
     }
   },
   methods: {
@@ -38,11 +49,34 @@ export default {
       })
       store.params.query = '';
     },
+    newProfile(name){
+        if(name.trim() !== ''){
+            store.listProfiles.push({
+                id: store.listProfiles.length + 1,
+                name: name,
+                profilePic: '/img/default-profile-picture1.jpg'
+            })
+            console.log(store.listProfiles);
+        }
+      },
   },
   created() {
+    this.playMoviesandSeries();
   },
 }
-
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+body{
+  width: 100%;
+  height: 100vh;
+}
+
+#header{
+  background-color: rgba(0,0,0,0.599);
+}
+
+#main{
+  background-color: rgb(37,37,37);
+}
+</style>

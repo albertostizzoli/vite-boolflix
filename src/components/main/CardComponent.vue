@@ -1,5 +1,5 @@
 <template>
-   <div class="card col-3">
+   <div class="card col-2">
     <img :src="store.imageUrl + image" class="card-img-top" :alt="title" v-if="image">
     <img src="/img/logo.jpeg" alt="Logo" v-else>
     <div class="card-body">
