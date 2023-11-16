@@ -5,7 +5,13 @@
     <div class="card-body">
         <h4 class="card-title">{{ title }}</h4>
         <h6 class="card-title">{{ original_title }}</h6>
-        <p class="card-text">{{ votes }}</p>
+        <p class="card-text">
+            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 0 && media_voti < 1,'fa-solid fa-star': media_voti > 0, 'fa-regular fa-star': media_voti === 0}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 1 && media_voti < 2,'fa-solid fa-star': media_voti > 1, 'fa-regular fa-star': media_voti < 2}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 2 && media_voti < 3,'fa-solid fa-star': media_voti > 2, 'fa-regular fa-star': media_voti < 3}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 3 && media_voti < 4,'fa-solid fa-star': media_voti > 3, 'fa-regular fa-star': media_voti < 4}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 4 && media_voti < 5,'fa-solid fa-star': media_voti > 4, 'fa-regular fa-star': media_voti < 5}"></i>
+            {{ votes }}</p>
         <p v-if="language === 'en'">
                 Lingua:
                 <img src="/img/british-flag-12.gif" alt="british flag"> 

@@ -4,13 +4,13 @@
       <SearchBar @search="playMoviesandSeries" />
     </header>
     <main>
-      <MainComponent />
+      <MainSection />
     </main>
   </div>
 </template>
 
 <script>
-import MainComponent from './components/MainComponent.vue';
+import MainSection from './components/MainSection.vue';
 import SearchBar from './components/SearchBar.vue';
 import axios from 'axios'
 import { store } from './data/store.js';
@@ -18,7 +18,7 @@ export default {
   name: 'App',
   components: {
     SearchBar,
-    MainComponent,
+    MainSection,
   },
   data() {
     return {
