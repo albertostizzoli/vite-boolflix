@@ -32,8 +32,8 @@
         <div class="d-flex justify-content-between align-items-center">
             <div class="input-group w-50 flex-nowrap">
                 <input class="form-control" type="text" v-model="store.params.query" @keyup.enter="$emit('search', text), store.showMain = true">
-                <button class="btn btn-danger" @click="$emit('search', text), store.showMain = true">Cerca</button>
             </div>
+            <button class="btn btn-danger me-3" @click="$emit('search', text), store.showMain = true">Cerca</button>
             <div class="profile">
                 <img :src="store.listProfiles[store.profileIndex].profilePic" :alt="store.listProfiles[store.profileIndex].descriptionPic">
                 <div class="text-light text-center">

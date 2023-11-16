@@ -6,11 +6,11 @@
         <h4 class="card-title">{{ title }}</h4>
         <h6 class="card-title">{{ original_title }}</h6>
         <p class="card-text">
-            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 0 && media_voti < 1,'fa-solid fa-star': media_voti > 0, 'fa-regular fa-star': media_voti === 0}"></i>
-            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 1 && media_voti < 2,'fa-solid fa-star': media_voti > 1, 'fa-regular fa-star': media_voti < 2}"></i>
-            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 2 && media_voti < 3,'fa-solid fa-star': media_voti > 2, 'fa-regular fa-star': media_voti < 3}"></i>
-            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 3 && media_voti < 4,'fa-solid fa-star': media_voti > 3, 'fa-regular fa-star': media_voti < 4}"></i>
-            <i :class="{'fa-solid fa-star-half-stroke': media_voti > 4 && media_voti < 5,'fa-solid fa-star': media_voti > 4, 'fa-regular fa-star': media_voti < 5}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': votes > 0 && votes < 1,'fa-solid fa-star': votes > 0, 'fa-regular fa-star': votes === 0}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': votes > 1 && votes < 2,'fa-solid fa-star': votes > 1, 'fa-regular fa-star': votes < 2}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': votes > 2 && votes < 3,'fa-solid fa-star': votes > 2, 'fa-regular fa-star': votes < 3}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': votes > 3 && votes < 4,'fa-solid fa-star': votes > 3, 'fa-regular fa-star': votes < 4}"></i>
+            <i :class="{'fa-solid fa-star-half-stroke': votes > 4 && votes < 5,'fa-solid fa-star': votes > 4, 'fa-regular fa-star': votes < 5}"></i>
             {{ votes }}</p>
         <p v-if="language === 'en'">
                 Lingua:
@@ -49,7 +49,7 @@ import {store} from '../../data/store.js';
 
              image: {
                 type: String,
-                required: false,
+                required: true,
             },
             title: {
                 type: String,
@@ -57,7 +57,7 @@ import {store} from '../../data/store.js';
             },
             votes: {
                 type: Number,
-                required: false,
+                required: true,
             },
             language: {
                 type: String,

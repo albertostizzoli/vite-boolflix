@@ -8,7 +8,7 @@
         <HeaderSection @search="playMoviesandSeries"/>
       </header>
       <main id="main">
-        <div class="container">
+        <div class="container-fluid">
           <MainSection />
         </div>
       </main>
@@ -69,14 +69,10 @@ export default {
 <style lang="scss" scoped>
 body{
   width: 100%;
-  height: 100vh;
 }
 
 #header{
   background-color: rgba(0,0,0,0.599);
 }
 
-#main{
-  background-color: rgb(37,37,37);
-}
 </style>

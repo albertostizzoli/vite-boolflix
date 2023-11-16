@@ -1,7 +1,6 @@
 <template>
     <section class="position-relative">
-        <h2 class="text-light">Series</h2>
-        <div class="row flex nowrap overflow-hidden">
+        <div class="row flex-wrap overflow-y-auto">
             <CardComponent 
             :image="element.poster_path" 
             :title="element.name" 
@@ -12,8 +11,7 @@
         </div>
     </section>
     <section class="position-absolute">
-        <h2 class="text-light">Movie</h2>
-        <div class="row flex nowrap overflow-hidden">
+        <div class="row flex-wrap overflow-y-auto ">
             <CardComponent 
             :image="element.poster_path" 
             :title="element.title" 
