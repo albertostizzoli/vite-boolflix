@@ -7,6 +7,7 @@
             :votes="getVote(element.vote_average)"
             :original_title="element.original_name" 
             :language="element.original_language"
+            :plot="element.overview"
             v-for="(element, index) in store.seriesList" :key="index" />
         </div>
     </section>
@@ -18,6 +19,7 @@
             :votes="getVote(element.vote_average)"
             :original_title="element.original_title" 
             :language="element.original_language"
+            :plot="element.overview"
             v-for="(element, index) in store.movieList" :key="index" />
         </div>
     </section>

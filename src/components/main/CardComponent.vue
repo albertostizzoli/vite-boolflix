@@ -33,6 +33,7 @@
                 <img src="/img/france-flag.gif" alt="france flag"> 
             </p>
         <h5 v-else class="card-text">{{ language }}</h5>
+        <p class="card-text">{{ plot }}</p>
     </div>
    </div>
 </template>
@@ -63,6 +64,10 @@ import {store} from '../../data/store.js';
                 type: String,
                 required: true,
             },
+            plot: {
+                type: String,
+                required: true
+            }
         },
         data(){
             return {

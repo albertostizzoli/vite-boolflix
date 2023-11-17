@@ -7,7 +7,7 @@
       <header class="p-4 position-fixed w-100 z-3" id="header">
         <HeaderSection @search="playMoviesandSeries"/>
       </header>
-      <main id="main">
+      <main>
         <div class="container-fluid">
           <MainSection />
         </div>
