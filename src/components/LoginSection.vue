@@ -57,7 +57,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '../assets/styles/partials/variables.scss' as *;
 body{
     width: 100%;
     height: 100vh;
@@ -88,7 +87,7 @@ i{
     font-size: 150px;
 }
 .my-text-color{
-    color: $my_text_color;
+    color: lightgray;
 }
 .my-popup{
     width: 300px;

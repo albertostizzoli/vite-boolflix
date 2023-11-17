@@ -1,6 +1,6 @@
 <template>
-    <section class="position-relative">
-        <div class="row flex-wrap overflow-y-auto">
+    <section class="container">
+        <div class="row flex-wrap">
             <CardComponent 
             :image="element.poster_path" 
             :title="element.name" 
@@ -11,8 +11,8 @@
             v-for="(element, index) in store.seriesList" :key="index" />
         </div>
     </section>
-    <section class="position-absolute">
-        <div class="row flex-wrap overflow-y-auto ">
+    <section class="container">
+        <div class="row flex-wrap">
             <CardComponent 
             :image="element.poster_path" 
             :title="element.title" 

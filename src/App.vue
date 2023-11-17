@@ -3,16 +3,14 @@
     <LoginSection @newProfile="newProfile" @showApp="showApp = true, startLogin = false" />
   </div>
   <div v-show="showApp">
-    <body>
-      <header class="p-4 position-fixed w-100 z-3" id="header">
+      <header class="w-100 p-4 bg-black">
         <HeaderSection @search="playMoviesandSeries"/>
       </header>
       <main>
-        <div class="container-fluid">
+        <div class="box">
           <MainSection />
         </div>
       </main>
-    </body>
   </div>
 </template>
 
@@ -67,12 +65,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-body{
-  width: 100%;
+.box{
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#header{
-  background-color: rgba(0,0,0,0.599);
+main{
+  background-color: rgba(0,0,0,0.5);
 }
 
 </style>
